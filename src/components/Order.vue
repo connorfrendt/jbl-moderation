@@ -24,7 +24,7 @@ export default {
             //make GET request to approval route
         },
 
-        deny: function(denial_text){
+        deny: function(denialText){
             //make GET request to denial route 
         }
     }
@@ -35,4 +35,3 @@ export default {
 <style scoped>
 
 </style>
-

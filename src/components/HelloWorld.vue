@@ -1,15 +1,22 @@
 <template>
   <div class="hello">
     <h1>{{ info }}</h1>
-    
+    <p>Hello World Component</p>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    info: String
+  },
+  created() {
+    axios
+      .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+      .then(res => (this.info = res.data))
   }
 }
 </script>
