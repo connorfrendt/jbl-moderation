@@ -1,27 +1,30 @@
 <template>
   <div id="app">
-    <HelloWorld msg="JBL Moderation Tool"/>
+    <Orders msg="JBL Moderation Tool"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Orders from './components/Orders.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Orders
   }
 }
 </script>
 
 <style>
+body {
+  background-color: black;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
