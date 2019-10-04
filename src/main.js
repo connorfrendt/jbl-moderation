@@ -7,7 +7,7 @@ new Vue({
   el: '#app',
   data() {
     return {
-      info: null
+      orders: null
     }
   },
   render: h => h(App),

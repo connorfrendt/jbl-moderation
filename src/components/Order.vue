@@ -1,37 +1,47 @@
 <template>
-    <div id='order'>
-        <img v-bind:src="imageUrl">
-        <button @click="approve">Approve</button>
-        <button @click="deny">Deny</button>
-    </div>
+    <li>
+       <p>{{ order }}</p>
+    </li>
 </template>
 
 <script>
-import axios from axios;
+import axios from 'axios';
 
 export default {
-    name: "order",
-    props: {
-        recipeId: String,
-    },
-    data: function(){
-        return {
-            imageUrl: ''
-        }
-    },
-    methods: {
-        approve: function(){
-            //make GET request to approval route
-        },
+    data() {
+			return {
+				order: Array
+			}
+		},
+		created() {
+        axios
+        .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+        .then(res => {
+            this.order = res.data
+            });
+  	}
+    // data() {
+    //     return {
+    //         imageUrl: ''
+    //     }
+    // },
+    // methods: {
+    //     approve: function(){
+    //         //make GET request to approval route
+    //     },
 
-        deny: function(denialText){
-            //make GET request to denial route 
-        }
-    }
-}
+    //     deny: function(denialText){
+    //         //make GET request to denial route 
+    //     }
+		// },
+		
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+li {
+    text-align: center;
+		list-style: none;
+		color: white;
+}
 </style>
