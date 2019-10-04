@@ -1,29 +1,24 @@
 <template>
-  <div class="hello">
-    <p>{{ info }}</p>
-  </div>
+  <ul>
+    <Order
+      
+      />
+  </ul>
 </template>
 
 <script>
-import axios from 'axios';
+import Order from './Order.vue';
 
 export default {
-  name: 'Orders',
   props: {
-    info: String
+    orders: Array
   },
-  created() {
-    axios
-      .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
-      .then(res => {
-        this.info = res.data
-        })
+  components: {
+    Order
   }
-}
+};
 </script>
 
 <style scoped>
-p {
-  color: white;
-}
+
 </style>

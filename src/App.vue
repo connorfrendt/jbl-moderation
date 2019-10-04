@@ -1,24 +1,27 @@
 <template>
   <div id="app">
-    <Orders msg="JBL Moderation Tool"/>
+    <Orders />
   </div>
 </template>
 
 <script>
-import Orders from './components/Orders.vue'
+import Orders from './components/Orders.vue';
+import axios from 'axios';
 
 export default {
-  name: 'app',
   components: {
     Orders
+  },
+  props: {
+    orders: Array
   }
 }
 </script>
 
 <style>
-body {
+/* body {
   background-color: black;
-}
+} */
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
