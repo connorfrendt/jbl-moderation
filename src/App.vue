@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <Orders />
+    <Orders v-bind:orders="orders"/>
   </div>
 </template>
 
 <script>
 import Orders from './components/Orders.vue';
+import axios from 'axios'
+
 
 export default {
+  data() {
+    return {
+      orders
+    }
+  },
   components: {
     Orders
   },
-  props: {
-    orders: Array
+  created() {
+      axios
+      .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+      .then(res => {
+        this.orders = res.data
+        });
   }
+
 }
 </script>
 

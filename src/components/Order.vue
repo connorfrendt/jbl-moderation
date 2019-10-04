@@ -1,6 +1,6 @@
 <template>
     <li>
-       <p>{{ order }}</p>
+       {{ order }}
     </li>
 </template>
 
@@ -12,14 +12,7 @@ export default {
 			return {
 				order: Array
 			}
-		},
-		created() {
-        axios
-        .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
-        .then(res => {
-            this.order = res.data
-            });
-  	}
+		}
     // data() {
     //     return {
     //         imageUrl: ''
