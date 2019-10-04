@@ -8,9 +8,11 @@
 import axios from 'axios';
 
 export default {
-    props: {
-        order: Object
-    },
+    data() {
+			return {
+				order: Array
+			}
+		},
     // data() {
     //     return {
     //         imageUrl: ''
