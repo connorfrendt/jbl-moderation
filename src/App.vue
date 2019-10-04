@@ -6,7 +6,6 @@
 
 <script>
 import Orders from './components/Orders.vue';
-import axios from 'axios'
 
 export default {
   components: {
@@ -19,9 +18,9 @@ export default {
 </script>
 
 <style>
-/* body {
+body {
   background-color: black;
-} */
+}
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

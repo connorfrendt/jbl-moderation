@@ -13,6 +13,13 @@ export default {
 				order: Array
 			}
 		},
+		created() {
+        axios
+        .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+        .then(res => {
+            this.order = res.data
+            });
+  	}
     // data() {
     //     return {
     //         imageUrl: ''
@@ -27,13 +34,7 @@ export default {
     //         //make GET request to denial route 
     //     }
 		// },
-		created() {
-        axios
-        .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
-        .then(res => {
-            this.order = res.data
-            });
-  	}
+		
 };
 </script>
 
@@ -41,5 +42,6 @@ export default {
 li {
     text-align: center;
 		list-style: none;
+		color: white;
 }
 </style>

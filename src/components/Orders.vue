@@ -6,12 +6,8 @@
 
 <script>
 import Order from './Order.vue';
-import axios from 'axios';
 
 export default {
-  props: {
-    orders: Array
-  },
   components: {
     Order
   }
