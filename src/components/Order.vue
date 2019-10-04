@@ -1,7 +1,6 @@
 <template>
     <li>
-       <p>THIS IS THE ORDER --> {{ order }}</p>
-       <p>ORDER HERE</p>
+       <p>{{ order }}</p>
     </li>
 </template>
 
@@ -25,19 +24,20 @@ export default {
     //     deny: function(denialText){
     //         //make GET request to denial route 
     //     }
-    // },
-    created() {
+		// },
+		created() {
         axios
         .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
         .then(res => {
             this.order = res.data
             });
-    }
+  	}
 };
 </script>
 
 <style scoped>
 li {
     text-align: center;
+		list-style: none;
 }
 </style>

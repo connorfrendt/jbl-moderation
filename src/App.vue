@@ -6,7 +6,7 @@
 
 <script>
 import Orders from './components/Orders.vue';
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   components: {
@@ -14,6 +14,13 @@ export default {
   },
   props: {
     orders: Array
+  },
+  created() {
+        axios
+        .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+        .then(res => {
+            this.order = res.data
+            });
   }
 }
 </script>
