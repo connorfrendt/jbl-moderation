@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <Orders v-bind:orders="orders"/>
   </div>
 </template>
 
 <script>
-import Orders from './components/Orders.vue';
+import Order from './components/Order.vue';
 import axios from 'axios'
 
 
 export default {
   data() {
     return {
-      orders
+      orders: []
     }
   },
   components: {
-    Orders
+    Order
   },
   created() {
+      console.log(process.env)
       axios
-      .get('https://api.spectrumcustomizer.com/api/external/jbl/orders/under-review')
+      .get(process.env.VUE_APP_LIST_URL)
       .then(res => {
         this.orders = res.data
         });

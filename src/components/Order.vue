@@ -5,29 +5,13 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
-    data() {
-			return {
-				order: Array
-			}
-		}
-    // data() {
-    //     return {
-    //         imageUrl: ''
-    //     }
-    // },
-    // methods: {
-    //     approve: function(){
-    //         //make GET request to approval route
-    //     },
-
-    //     deny: function(denialText){
-    //         //make GET request to denial route 
-    //     }
-		// },
-		
+  props: {
+    recipeSetId: {
+      type: String,
+      required: true
+    }
+  }
 };
 </script>
 
