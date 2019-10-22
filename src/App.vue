@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <Orders />
   </div>
 </template>
 
 <script>
-import Orders from './components/Orders.vue';
+import Order from './components/Order.vue';
+import axios from 'axios'
+
 
 export default {
-  components: {
-    Orders
+  data() {
+    return {
+      orders: []
+    }
   },
-  props: {
-    orders: Array
+  components: {
+    Order
+  },
+  created() {
+      console.log(process.env)
+      axios
+      .get(process.env.VUE_APP_LIST_URL)
+      .then(res => {
+        this.orders = res.data
+        });
   }
+
 }
 </script>
 
