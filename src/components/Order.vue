@@ -1,6 +1,6 @@
 <template>
     <li>
-       {{ order }}
+       {{ recipeSetId }}
     </li>
 </template>
 

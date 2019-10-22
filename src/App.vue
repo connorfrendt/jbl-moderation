@@ -1,12 +1,12 @@
 <template>
   <div id="app">
+    <order v-for="order in orders" :key="order.purchaseOrderNumber" :recipeSetId="order.recipeSetReadableId"/>
   </div>
 </template>
 
 <script>
 import Order from './components/Order.vue';
 import axios from 'axios'
-
 
 export default {
   data() {
