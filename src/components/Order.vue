@@ -11,6 +11,14 @@ export default {
       type: String,
       required: true
     }
+  },
+  computed: {
+      addToCartURL() {
+        return `https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${this.recipeSetId}/north/state/ber-print-output/camera/Ortho/)`;
+      },
+      printOutputURL() {
+        return 
+      }
   }
 };
 </script>
