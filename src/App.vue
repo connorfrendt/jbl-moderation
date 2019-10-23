@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <order v-for="order in orders" :key="order.purchaseOrderNumber" :recipeSetId="order.recipeSetReadableId"/>
+    <order
+      v-for="order in orders"
+      :key="order.purchaseOrderNumber"
+      :recipeSetId="order.recipeSetReadableId"
+      @approve="onApprove"
+      @deny="onDeny"
+    />
   </div>
 </template>
 
@@ -16,6 +22,16 @@ export default {
   },
   components: {
     Order
+  },
+  methods: {
+    onApprove(data) {
+      console.log(data);
+      alert('It’s been approved, Connor! Do something!');
+    },
+    onDeny(data) {
+      console.log(data);
+      alert('It’s been denied, Connor! Do something!');
+    }
   },
   created() {
       console.log(process.env)

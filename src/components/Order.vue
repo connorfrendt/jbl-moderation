@@ -1,7 +1,10 @@
 <template>
-    <li>
+    <div>
        {{ recipeSetId }}
-    </li>
+       <img :src="printOutputURL"/>
+       <button @click="$emit('approve', 'YOURDATAHERE')">Approve</button>
+       <button @click="$emit('deny', 'YOURDATAHERE')">Deny</button>
+    </div>
 </template>
 
 <script>
@@ -13,11 +16,8 @@ export default {
     }
   },
   computed: {
-      addToCartURL() {
-        return `https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${this.recipeSetId}/north/state/ber-print-output/camera/Ortho/)`;
-      },
       printOutputURL() {
-        return 
+        return `https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${this.recipeSetId}/north/state/ber-print-output/camera/Ortho/width/381/height/286)`;
       }
   }
 };
