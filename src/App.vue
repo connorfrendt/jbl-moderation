@@ -28,11 +28,11 @@ export default {
       axios
         .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/approved')
         .then(this.getOrders());
-      alert(data + ' has been approved')
     },
     onDeny(data) {
-      console.log(data);
-      alert('It’s been denied, Connor! Do something!');
+      // axios
+        // .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/denied')
+        // .then(this.getOrders());
     },
     getOrders() {
       axios
