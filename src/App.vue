@@ -25,21 +25,25 @@ export default {
   },
   methods: {
     onApprove(data) {
-      console.log(data);
-      alert('It’s been approved, Connor! Do something!');
+      axios
+        .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/approved')
+        .then(this.getOrders());
+      alert(data + ' has been approved')
     },
     onDeny(data) {
       console.log(data);
       alert('It’s been denied, Connor! Do something!');
+    },
+    getOrders() {
+      axios
+        .get(process.env.VUE_APP_LIST_URL)
+        .then(res => {
+          this.orders = res.data;
+        });
     }
   },
   created() {
-      console.log(process.env)
-      axios
-      .get(process.env.VUE_APP_LIST_URL)
-      .then(res => {
-        this.orders = res.data
-        });
+    this.getOrders();
   }
 
 }

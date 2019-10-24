@@ -2,8 +2,8 @@
     <div>
        {{ recipeSetId }}
        <img :src="printOutputURL"/>
-       <button @click="$emit('approve', 'YOURDATAHERE')">Approve</button>
-       <button @click="$emit('deny', 'YOURDATAHERE')">Deny</button>
+       <button @click="$emit('approve', recipeSetId)">Approve</button>
+       <button @click="$emit('deny', recipeSetId)">Deny</button>
     </div>
 </template>
 
