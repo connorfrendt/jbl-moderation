@@ -30,9 +30,9 @@ export default {
         .then(this.getOrders());
     },
     onDeny(data) {
-      // axios
-        // .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/denied')
-        // .then(this.getOrders());
+      axios
+        .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/denied')
+        .then(this.getOrders());
     },
     getOrders() {
       axios
