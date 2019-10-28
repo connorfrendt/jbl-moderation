@@ -1,9 +1,9 @@
 <template>
-    <div>
-       {{ recipeSetId }}
-       <img :src="printOutputURL"/>
-       <button @click="$emit('approve', recipeSetId)">Approve</button>
-       <button @click="$emit('deny', recipeSetId)">Deny</button>
+    <div id="order">
+      {{ recipeSetId }}
+      <img :src="printOutputURL"/>
+      <button id="approve" @click="$emit('approve', recipeSetId)">Approve</button>
+      <button id="deny" @click="$emit('deny', recipeSetId)">Deny</button>
     </div>
 </template>
 
@@ -24,9 +24,28 @@ export default {
 </script>
 
 <style scoped>
-li {
+  #order {
+    background-color: gray;
+    margin: 20px;
     text-align: center;
-		list-style: none;
-		color: white;
-}
+    border-radius: 5px;
+  }
+  
+  #approve {
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 10px;
+  }
+  #approve:hover {
+    background-color: rgb(0, 196, 0);
+  }
+
+  #deny {
+    background-color: coral;
+    padding: 10px;
+    margin: 10px;
+  }
+  #deny:hover {
+    background-color: red;
+  }
 </style>

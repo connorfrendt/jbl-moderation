@@ -2,7 +2,7 @@
   <div id="app">
     <order
       v-for="order in orders"
-      :key="order.purchaseOrderNumber"
+      :key="order.recipeSetReadableId"
       :recipeSetId="order.recipeSetReadableId"
       @approve="onApprove"
       @deny="onDeny"
@@ -55,6 +55,9 @@ body {
 }
 
 #app {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
