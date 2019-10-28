@@ -1,9 +1,10 @@
 <template>
     <div id="order">
-      {{ recipeSetId }}
       <img :src="printOutputURL"/>
-      <button id="approve" @click="$emit('approve', recipeSetId)">Approve</button>
-      <button id="deny" @click="$emit('deny', recipeSetId)">Deny</button>
+      <div id="flex-buttons">
+        <button id="approve" @click="$emit('approve', recipeSetId)">APPROVE</button>
+        <button id="deny" @click="$emit('deny', recipeSetId)">DENY</button>
+      </div>
     </div>
 </template>
 
@@ -25,16 +26,22 @@ export default {
 
 <style scoped>
   #order {
-    background-color: gray;
+    background-color: rgba(128, 128, 128, .4);
     margin: 20px;
     text-align: center;
     border-radius: 5px;
   }
   
+  #flex-buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+
   #approve {
     background-color: lightgreen;
     padding: 10px;
     margin: 10px;
+    width: 100%;
   }
   #approve:hover {
     background-color: rgb(0, 196, 0);
@@ -44,6 +51,7 @@ export default {
     background-color: coral;
     padding: 10px;
     margin: 10px;
+    width: 100%;
   }
   #deny:hover {
     background-color: red;
