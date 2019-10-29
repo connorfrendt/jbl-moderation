@@ -33,6 +33,7 @@ export default {
       axios
         .get(process.env.VUE_APP_MODERATION_BASE_URL + data + '/action/denied')
         .then(this.getOrders());
+        // window.open('mailto:hcgcustomersupport@harman.com?subject=Moderated Image Content&body=Purchase Order Number: ' + '\r\n' + 'Moderation Status: Cancelled');
     },
     getOrders() {
       axios
