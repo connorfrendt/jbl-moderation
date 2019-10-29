@@ -32,9 +32,9 @@ export default {
     onDeny(recipeSetReadableId) {
       const order = this.orders.find(someOrder => someOrder.recipeSetReadableId === recipeSetReadableId);
       const reason = window.prompt('Reason for denying:');
-      // axios
-      //   .get(process.env.VUE_APP_MODERATION_BASE_URL + recipeSetReadableId + '/action/denied')
-      //   .then(() => this.getOrders());
+      axios
+        .get(process.env.VUE_APP_MODERATION_BASE_URL + recipeSetReadableId + '/action/denied')
+        .then(() => this.getOrders());
       window.open(encodeURI(`mailto:hcgcustomersupport@harman.com?subject=Moderated Image Content&body=Purchase Order Number: ${order.purchaseOrderNumber}
 Moderation Status: Cancelled
 Reasoning: ${reason}
@@ -68,9 +68,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 10px;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
 </style>
