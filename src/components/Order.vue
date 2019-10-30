@@ -40,7 +40,7 @@ export default {
   #approve {
     background-color: lightgreen;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
   }
   #approve:hover {
@@ -50,7 +50,7 @@ export default {
   #deny {
     background-color: coral;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
   }
   #deny:hover {
