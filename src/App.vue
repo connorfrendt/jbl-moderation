@@ -4,6 +4,8 @@
       v-for="order in orders"
       :key="order.recipeSetReadableId"
       :recipeSetId="order.recipeSetReadableId"
+      :orderNumber="order.purchaseOrderNumber"
+      :email="order.emailAddress"
       @approve="onApprove"
       @deny="onDeny"
     />
