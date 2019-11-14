@@ -64,6 +64,7 @@ https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${rec
 <style>
 body {
   background-color: black;
+  margin: 0px;
 }
 
 #app {
@@ -71,5 +72,20 @@ body {
   grid-template-columns: repeat(3, 1fr);
   margin: 10px;
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  #app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  #app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 </style>

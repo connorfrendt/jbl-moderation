@@ -1,20 +1,22 @@
 <template>
     <div id="order">
       <img :src="printOutputURL" />
-      <div id="pic-header">
-        <div id="pon">
-          <p class="order-num-email" style="display: inline-block">Purchase Order Number: </p>
-          <p class="pic-p"><b>{{ orderNumber }}</b></p>
+      <div id="details">
+        <div id="pic-header">
+          <div id="pon">
+            <p class="order-num-email" style="display: inline-block">Purchase Order Number: </p>
+            <p class="pic-p"><b>{{ orderNumber }}</b></p>
+          </div>
+          <div id="email">
+            <p class="order-num-email" style="display: inline-block">Email: </p>
+            <p class="pic-p"><b>{{ email }}</b></p>
+          </div>
         </div>
-        <div id="email">
-          <p class="order-num-email" style="display: inline-block">Email: </p>
-          <p class="pic-p"><b>{{ email }}</b></p>
+        
+        <div id="flex-buttons">
+          <button id="approve" @click="$emit('approve', recipeSetId)">APPROVE</button>
+          <button id="deny" @click="$emit('deny', recipeSetId)">DENY</button>
         </div>
-      </div>
-      
-      <div id="flex-buttons">
-        <button id="approve" @click="$emit('approve', recipeSetId)">APPROVE</button>
-        <button id="deny" @click="$emit('deny', recipeSetId)">DENY</button>
       </div>
     </div>
 </template>
@@ -37,7 +39,7 @@ export default {
   },
   computed: {
       printOutputURL() {
-        return `https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${this.recipeSetId}/north/state/ber-print-output/camera/Ortho/width/381/height/286)`;
+        return `https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${this.recipeSetId}/north/state/ber-print-output/camera/Ortho/width/381/height/286`;
       }
   }
 };
@@ -46,9 +48,15 @@ export default {
 <style scoped>
 #order {
   background-color: rgba(128, 128, 128, .4);
-  margin: 20px;
+  margin: 10px;
   text-align: center;
   border-radius: 5px;
+}
+
+@media (max-width: 450px) {
+  #order {
+    margin: 10px 0;
+  }
 }
 
 #pic-header {
