@@ -33,15 +33,11 @@ export default {
     },
     onDeny(recipeSetReadableId) {
       const order = this.orders.find(someOrder => someOrder.recipeSetReadableId === recipeSetReadableId);
-      const reason = window.prompt('Reason for denying:');
+      //const reason = window.prompt('Reason for denying:');
       axios
         .get(process.env.VUE_APP_MODERATION_BASE_URL + recipeSetReadableId + '/action/denied')
         .then(() => this.getOrders());
-      window.open(encodeURI(`mailto:hcgcustomersupport@harman.com?subject=Moderated Image Content&body=Purchase Order Number: ${order.purchaseOrderNumber}
-Moderation Status: Cancelled
-Reasoning: ${reason}
-
-Message: We were unable to process your order because the uploaded imagery contained inappropriate material.  You will be refunded the full amount for this order.  We are sorry for the inconvenience.
+      window.open(encodeURI(`mailto:hcgcustomersupport@harman.com?subject=PZ - Copyright ${order.purchaseOrderNumber}-${recipeSetReadableId}&body=Purchase Order Number: ${order.purchaseOrderNumber}-${recipeSetReadableId}
 
 Image URL:
 https://api.spectrumcustomizer.com/api/assets/generated/recipeset/readable/${recipeSetReadableId}/north/state/ber-print-output/camera/Ortho/width/381/height/286`));
