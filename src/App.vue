@@ -34,9 +34,9 @@ export default {
     onDeny(recipeSetReadableId) {
       const order = this.orders.find(someOrder => someOrder.recipeSetReadableId === recipeSetReadableId);
       //const reason = window.prompt('Reason for denying:');
-      axios
-        .get(process.env.VUE_APP_MODERATION_BASE_URL + recipeSetReadableId + '/action/denied')
-        .then(() => this.getOrders());
+      // axios
+      //   .get(process.env.VUE_APP_MODERATION_BASE_URL + recipeSetReadableId + '/action/denied')
+      //   .then(() => this.getOrders());
       window.open(encodeURI(`mailto:hcgcustomersupport@harman.com?subject=PZ - Copyright ${order.purchaseOrderNumber}-${recipeSetReadableId}&body=Purchase Order Number: ${order.purchaseOrderNumber}-${recipeSetReadableId}
 
 Image URL:
